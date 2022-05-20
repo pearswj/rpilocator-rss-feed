@@ -1,17 +1,18 @@
-import requests
 import feedparser
+import os
+import requests
 import time
 
 # Feed URL
-FEED_URL = 'https://rpilocator.com/feed/'
+FEED_URL = os.environ.get('FEED_URL', 'https://rpilocator.com/feed/')
 # FEED_URL = 'https://hwlocator.com/feed/'
 
 # After creating your Pushover account, register your application
 # User Key
-PUSHOVER_KEY = '<your user key here>'
+PUSHOVER_KEY = os.environ['PUSHOVER_KEY']
 
 # Application Key
-PUSHOVER_API_KEY = '<your application key here>'
+PUSHOVER_API_KEY = os.environ['PUSHOVER_API_KEY']
 
 # Customize the message title
 MESSAGE_TITLE = 'xlocator Stock Alert'
